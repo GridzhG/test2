@@ -1,94 +1,99 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from "../pages/Home"
-import AuthCallback from "../pages/Auth-callback"
-import Box from "../pages/Box";
-import Profile from "../pages/Profile";
-import Referral from "../pages/Referral";
-import Partner from "../pages/Partner";
-import Cooperation from "../pages/Cooperation";
-import Faq from "../pages/Faq";
-import Chat from "../pages/Chat";
-import User from "../pages/User";
-import Bust from "../pages/Bust";
-import Upgrade from "../pages/Upgrade";
+import Index from "@/pages/Index";
+import Cases from "@/pages/Cases";
+import Categories from "@/pages/Categories";
+import CaseItems from "@/pages/CaseItems";
+import Items from "@/pages/Items";
+import Withdraws from "@/pages/Withdraws";
+import Users from "@/pages/Users";
+import User from "@/pages/User";
+import Payments from "../pages/Payments";
+import Settings from "../pages/Settings";
+import Promocodes from "../pages/Promocodes";
+import Giveaways from "../pages/Giveaways";
+import Giveaway from "../pages/Giveaway";
+import Bots from "../pages/Bots";
 
 Vue.use(VueRouter)
 
 const routes = [
-    {
-        path: '/',
-        name: 'Home',
-        component: Home
-    },
-    {
-        path: '/auth/steam',
-        name: 'AuthCallback',
-        component: AuthCallback
-    },
-    {
-        path: '/box/:url',
-        name: 'Box',
-        component: Box
-    },
-    {
-        path: '/user/:id',
-        name: 'User',
-        component: User
-    },
-    {
-        path: '/profile',
-        name: 'Profile',
-        component: Profile
-    },
-    {
-        path: '/r/:ref',
-        name: 'Referral',
-        component: Referral
-    },
-    {
-        path: '/partner',
-        name: 'Partner',
-        component: Partner
-    },
-    {
-        path: '/cooperation',
-        name: 'Cooperation',
-        component: Cooperation
-    },
-    {
-        path: '/faq',
-        name: 'Faq',
-        component: Faq
-    },
-    {
-        path: '/chat',
-        name: 'Chat',
-        component: Chat
-    },
-    {
-        path: '/bust',
-        name: 'Bust',
-        component: Bust
-    },
-    {
-        path: '/upgrade',
-        name: 'Upgrade',
-        component: Upgrade
-    },
-    {
-        path: "*",
-        redirect: '/'
-    }
+  {
+    path: '/',
+    name: 'index',
+    component: Index
+  },
+  {
+    path: '/cases',
+    name: 'cases',
+    component: Cases
+  },
+  {
+    path: '/bots',
+    name: 'bots',
+    component: Bots
+  },
+  {
+    path: '/categories',
+    name: 'categories',
+    component: Categories
+  },
+  {
+    path: '/case/items/:id',
+    name: 'CaseItems',
+    component: CaseItems
+  },
+  {
+    path: '/items',
+    name: 'items',
+    component: Items
+  },
+  {
+    path: '/withdraws',
+    name: 'withdraws',
+    component: Withdraws
+  },
+  {
+    path: '/users',
+    name: 'users',
+    component: Users
+  },
+  {
+    path: '/user/:id',
+    name: 'user',
+    component: User
+  },
+  {
+    path: '/payments',
+    name: 'payments',
+    component: Payments
+  },
+  {
+    path: '/settings',
+    name: 'settings',
+    component: Settings
+  },
+  {
+    path: '/promocodes',
+    name: 'promocodes',
+    component: Promocodes
+  },
+  {
+    path: '/giveaways',
+    name: 'giveaways',
+    component: Giveaways
+  },
+  {
+    path: '/giveaway/:id',
+    name: 'giveaway',
+    component: Giveaway
+  },
 ]
 
 const router = new VueRouter({
-    mode: 'history',
-    base: process.env.BASE_URL,
-    routes,
-    scrollBehavior () {
-        return { x: 0, y: 0 }
-    }
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
 })
 
 export default router
